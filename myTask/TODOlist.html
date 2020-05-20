@@ -6,25 +6,41 @@
         <script src="TODO.js"></script>
     </head>
     <body>
-        <div>
-             <form>
-                <p><input value="Enter text...">
-                    <select>
-                        <option selected value="p1">High</option>
-                        <option value="p2">Medium</option>
-                        <option value="p3">Low</option>
-                    </select>
-                    <input type="submit" value="+">
-                 </p>
-                 <p>
-                     <input type="checkbox" value="Completed">Completed
-                     <input type="checkbox" value="High">High
-                     <input type="checkbox" value="Medium">Medium
-                     <input type="checkbox" value="Low">Low
-                     <input type="checkbox" value="Date">Date
-                 </p>
-             </form>
+        <h1>ToDo list</h1>
+
+        <div class="createTask">
+            <input class="enterTask" type="text" placeholder="Enter text...">
+            <select class="chouseSort">
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+            </select>
+            <button class="addTask"> +</button>
         </div>
-   
+
+        <div class="sortType">
+            <input type="checkbox">Completed
+            <input type="checkbox">High
+            <input type="checkbox">Medium
+            <input type="checkbox">Low
+        </div>
+
+       <div>
+         <p><h2>Количество задач:</h2><input class="count" type="number">
+            </p>
+    </div> 
+
+        <div class="card">
+            <div class="TODOitem">
+                <input class="item" type="text">
+                    <button class="itemCancel">Cancel</button>
+                    <button class="itemDone">Done</button>
+                
+                <button class="itemDelete">Delete</button>
+                
+            </div>
+        </div>
+        
+
     </body>
 </html>
