@@ -29,8 +29,8 @@ background-color: rgb(174, 223, 194);
     width: 40px;
     border-radius: 100%;
     cursor: pointer;
-    background:url(C:/Users/Алина/Desktop/Todo-List/myTask/images/pl.svg) center center no-repeat ;
-    font-size: larger;
+    background:whitesmoke ;
+    font-size: medium;
 }
 
 .createTask .chouseSort{
