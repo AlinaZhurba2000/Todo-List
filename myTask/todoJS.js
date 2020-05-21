@@ -1,8 +1,8 @@
 "use strict"
 
-var enterTask = document.querySelector('.enterTask');
-var addTask = document.querySelector('.addTask');
-var card = document.querySelector('.card');
+let enterTask = document.querySelector('.enterTask');
+let addTask = document.querySelector('.addTask');
+let card = document.querySelector('.card');
 
 class task{
     constructor(name){
@@ -19,21 +19,26 @@ class task{
     	input.value = name;
     	input.classList.add('item');
 
-    	var edit = document.createElement('button');
-    	edit.classList.add('itemCancel');
-    	edit.innerHTML = "Can";
-    	edit.addEventListener('click', () => this.edit(input));
+    	let cancelTask = document.createElement('button');
+    	cancelTask.classList.add('itemCancel');
+    	cancelTask.innerHTML = "Cancel";
+        cancelTask.addEventListener('click', () => this.edit(input));
+        
+        let doneTask = document.createElement('button');
+    	doneTask.classList.add('itemCancel');
+    	doneTask.innerHTML = "Cancel";
+    	doneTask.addEventListener('click', () => this.edit(input));
 
-    	var remove = document.createElement('button');
-    	remove.classList.add('itemDone');
-    	remove.innerHTML = "Do";
-    	remove.addEventListener('click', () => this.remove(itemBox));
+    	let deleteTask = document.createElement('button');
+    	deleteTask.classList.add('itemDone');
+    	deleteTask.innerHTML = "Delete";
+    	deleteTask.addEventListener('click', () => this.remove(itemBox));
 
     	card.appendChild(itemBox);
 
         itemBox.appendChild(input);
-        itemBox.appendChild(edit);
-        itemBox.appendChild(remove);
+        itemBox.appendChild(cancelTask);
+        itemBox.appendChild(deleteTask);
     }
     edit(input){
       
@@ -48,6 +53,9 @@ class task{
 }
 
 
-addTask.addEventListener('click',()=>new task(enterTask.value));
+addTask.addEventListener('click',()=>{
+    new task(enterTask.value);
+    enterTask.value="";
+});
 
 

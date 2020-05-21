@@ -5,11 +5,12 @@ h1{
 
 body{
     text-align: center;
-background-color: rgb(174, 223, 194);
+    background-color: rgb(174, 223, 194);
 }
 
 .createTask{
     margin-bottom: 0.5rem;
+
 }
 
 .sortType{
@@ -26,8 +27,8 @@ background-color: rgb(174, 223, 194);
 
 .createTask .addTask{
     height: 40px;
-    width: 40px;
-    border-radius: 100%;
+    width: 60px;
+    border-radius: 25px;
     cursor: pointer;
     background:whitesmoke ;
     font-size: medium;
@@ -51,23 +52,23 @@ background-color: rgb(174, 223, 194);
 
 .item{
     background-color: azure;
-    height: 80px;
-    width: 400px;
+    height: 60px;
+    width: 450px;
     border-radius: 25px;
     font-size: medium;
 }
 .itemCancel{
     font-size: medium;
     height: 40px;
-    width: 40px;
-    border-radius: 100%;
+    width: 80px;
+    border-radius: 25px;
     cursor: pointer;
     background:whitesmoke;
 }
 .itemDone{
     font-size: medium;
     height: 40px;
-    width: 40px;
+    width: 80px;
     border-radius: 25px;
     cursor: pointer;
 }
