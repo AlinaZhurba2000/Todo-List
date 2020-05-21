@@ -1,6 +1,12 @@
 
 h1{
     text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+h2{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
 }
 
 body{
@@ -15,14 +21,26 @@ body{
 
 .sortType{
     margin-bottom: 1rem;
+    font-size: medium;
+    font-family: 'Raleway', sans-serif; 
+    padding: 1rem;
    
 }
+
+.sortType .styleCheck{
+    margin-left: 1.5rem;
+}
+ 
 
 .createTask .enterTask{
     height: 40px;
     width: 400px;
     border-radius: 25px;
     font-size: medium;
+    font-family: 'Raleway', sans-serif;
+    border:none;
+    outline: none;
+    padding-left: 1rem;
 }
 
 .createTask .addTask{
@@ -30,14 +48,23 @@ body{
     width: 60px;
     border-radius: 25px;
     cursor: pointer;
-    background:whitesmoke ;
+    border:none;
+    background:black; ;
     font-size: medium;
+    font-family: 'Raleway', sans-serif;
+    color:white
 }
 
 .createTask .chouseSort{
     height: 40px;
     width: 100px;
     border-radius: 25px;
+    padding-left: 1rem;
+    font-size: medium;
+    font-family: 'Raleway', sans-serif;
+    border:none;
+    outline: none;
+    background: white;
 }
 
 .card{
@@ -46,36 +73,65 @@ body{
     align-items: center;
     text-align: center;
     margin-top: 2rem;
-
-   
 }
 
 .item{
-    background-color: azure;
+    background:white;
     height: 60px;
     width: 450px;
     border-radius: 25px;
     font-size: medium;
+    font-family: 'Raleway', sans-serif;
+    margin: 0.5rem;
+    border:none;
+    outline:none;
+    padding-left: 1rem;
 }
+
 .itemCancel{
-    font-size: medium;
     height: 40px;
-    width: 80px;
+    width: 100px;
     border-radius: 25px;
     cursor: pointer;
-    background:whitesmoke;
+    border:none;
+    background:black; ;
+    font-size: medium;
+    font-family: 'Raleway', sans-serif;
+    color:white
 }
+
 .itemDone{
-    font-size: medium;
     height: 40px;
-    width: 80px;
+    width: 100px;
     border-radius: 25px;
     cursor: pointer;
+    border:none;
+    background:black; ;
+    font-size: medium;
+    font-family: 'Raleway', sans-serif;
+    color:white
 }
+
 .itemDelete{
-    font-size: medium;
     height: 40px;
-    width: 40px;
+    width: 100px;
     border-radius: 25px;
     cursor: pointer;
+    border:none;
+    background:black; ;
+    font-size: medium;
+    font-family: 'Raleway', sans-serif;
+    color:white
+}
+
+.count{
+    margin-left: 2rem;
+    height: 40px;
+    width: 110px;
+    border-radius: 25px;
+    font-family: 'Raleway', sans-serif;
+    border:none;
+    outline: none;
+    background: white;
+    font-size: medium;
 }
