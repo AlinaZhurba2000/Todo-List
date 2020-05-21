@@ -3,15 +3,22 @@
 let enterTask = document.querySelector('.enterTask');
 let addTask = document.querySelector('.addTask');
 let card = document.querySelector('.card');
+let chousePriority = document.querySelector('.chouseSort');
+
+
 
 class task{
-    constructor(name){
-        this.createTask(name);
+    constructor(name,priority){
+        this.createTask(name,priority);
     }
 
-    createTask(name){
+    createTask(name,priority){
         let itemBox = document.createElement('div');
         itemBox.classList.add('TODOitem');
+
+        let prior = document.createElement('label');
+        prior.for = name;
+        prior.classList.add('label');
 
         let input = document.createElement('input');
     	input.type = "text";
@@ -52,7 +59,7 @@ class task{
 
 
 addTask.addEventListener('click',()=>{
-    new task(enterTask.value);
+    new task(enterTask.value, chousePriority.value);
     enterTask.value="";
 });
 
