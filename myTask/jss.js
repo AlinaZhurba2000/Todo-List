@@ -72,6 +72,30 @@ function editTask(poleTask)
 }
 
 let sortHigh = document.querySelector("#High");
+sortHigh.addEventListener('click',()=>{
+    let sortedDivByHigh = Array.from(card.children)
+    .sort((divA,divB)=>divA.name>divB.name ? 1 :-1);
+
+card.append(...sortedDivByHigh);
+});
+
+let sortMedium = document.querySelector("#Medium");
+sortMedium.addEventListener('click',()=>{
+    let sortedDivByMedium = Array.from(card.children)
+    .sort((divA,divB)=>divA.name>divB.name ? 1 :-1);
+
+card.append(...sortedDivByMedium);
+});
+
+let sortLow = document.querySelector("#Low");
+sortLow.addEventListener('click',()=>{
+    let sortedDivByLow = Array.from(card.children)
+    .sort((divA,divB)=>divA.name>divB.name ? 1 :-1);
+
+card.append(...sortedDivByLow);
+})
+
+
 
 
 
