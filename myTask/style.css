@@ -92,6 +92,32 @@ body{
     padding-left: 1rem;
 }
 
+.item-done{
+    background:rgb(95, 155, 204);
+    height: 60px;
+    width: 450px;
+    border-radius: 25px;
+    font-size: medium;
+    font-family: 'Raleway', sans-serif;
+    margin: 0.5rem;
+    border:none;
+    outline:none;
+    padding-left: 1rem;
+}
+
+.item-cancel{
+    background:rgb(223, 146, 95);
+    height: 60px;
+    width: 450px;
+    border-radius: 25px;
+    font-size: medium;
+    font-family: 'Raleway', sans-serif;
+    margin: 0.5rem;
+    border:none;
+    outline:none;
+    padding-left: 1rem;
+}
+
 .itemCancel{
     height: 40px;
     width: 100px;

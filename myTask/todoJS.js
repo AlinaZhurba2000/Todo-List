@@ -7,7 +7,7 @@ let chousePriority = document.querySelector('.chouseSort');
 
 let Tasks = [];
 
-function createTaskElement(name,priority){
+function createTaskElement(name,priority,status){
     this.name = name;
     this.priority = priority;
     this.status = false;
@@ -40,11 +40,19 @@ addTask.onclick = () => {
     deleteButton.addEventListener('click',()=>deleteTask(divTask, Tasks));
     divTask.appendChild(deleteButton);
 
+    //пока не знаю, как сделать редактируемым по нажатию (почему-то не выходит)
     let editButton = document.createElement('button');
     editButton.classList.add('itemCancel');
     editButton.innerHTML='Edit';
-    editButton.addEventListener('click',()=>editTask(poleTask));
+    editButton.addEventListener('click',()=>editTask(poleTask, task));
     divTask.appendChild(editButton);
+
+    //кнопка выполнения
+    let completeButton = document.createElement('button');
+    completeButton.classList.add('itemDone');
+    completeButton.innerHTML='Done';
+    completeButton.addEventListener('click',()=>doneTask(divTask,poleTask,task));
+    divTask.appendChild(completeButton);
 
     //считаем количество задач
     let getCountofTask = document.querySelector('.count');
@@ -71,6 +79,15 @@ function editTask(poleTask)
     poleTask.disabled = !poleTask.disabled;
 }
 
+function doneTask(divTask,poleTask, task)
+{
+    task.status = !task.status;
+    if(task.status){
+        poleTask.className='item-done';
+    }
+    else poleTask.className='item-cancel';
+}
+
 //тоже не работает...
 let sortHigh = document.querySelector("#High");
 sortHigh.addEventListener('click',()=>{
@@ -95,3 +112,7 @@ sortLow.addEventListener('click',()=>{
 
 card.append(...sortedDivByLow);
 })
+
+//1. исправить сортировку
+//2. добавить дату
+//3. настроить фильтр
