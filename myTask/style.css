@@ -47,6 +47,13 @@ body{
     padding-left: 1rem;
 }
 
+.TODOitem{
+    border-radius: 25px;
+    border:black;
+    font-size: medium;
+    font-family: 'Raleway', sans-serif;
+}
+
 .createTask .addTask{
     height: 40px;
     width: 60px;

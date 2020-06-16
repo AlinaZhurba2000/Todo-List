@@ -21,16 +21,18 @@ addTask.onclick = () => {
     //создаем карточку для задачи
      let divTask = document.createElement('div');
      divTask.classList.add('TODOitem');
+     divTask.innerHTML='Priority: ' + task.priority;
+     divTask.id = task.priority;
      card.appendChild(divTask);
 
      //текст задачи
     let poleTask = document.createElement('input');
     poleTask.classList.add('item');
     poleTask.type ='text';
-    poleTask.value = 'priority:' + task.priority +'  ' + task.name ;
+    poleTask.value = task.name ;
     poleTask.name = task.priority;
     poleTask.disabled = true;
-    //poleTask.addEventListener('click',()=>editTask(poleTask));
+    
     divTask.appendChild(poleTask);
 
     //кнопка удаления
@@ -92,7 +94,7 @@ function doneTask(divTask,poleTask, task)
 let sortHigh = document.querySelector("#High");
 sortHigh.addEventListener('click',()=>{
     let sortedDivByHigh = Array.from(card.children)
-    .sort((divA)=>divA.priority=='High');
+    .filter((divA)=>divA.id=='High');
 
 card.append(...sortedDivByHigh);
 });
