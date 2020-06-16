@@ -5,62 +5,93 @@ let addTask = document.querySelector('.addTask');
 let card = document.querySelector('.card');
 let chousePriority = document.querySelector('.chouseSort');
 
+let Tasks = [];
 
-
-class task{
-    constructor(name,priority){
-        this.createTask(name,priority);
-    }
-
-    createTask(name,priority){
-        let itemBox = document.createElement('div');
-        itemBox.classList.add('TODOitem');
-
-        let prior = document.createElement('label');
-        prior.for = name;
-        prior.classList.add('label');
-
-        let input = document.createElement('input');
-    	input.type = "text";
-        input.disabled = true;
-    	input.value = name;
-        input.classList.add('item');
-        
-    	let cancelTask = document.createElement('button');
-    	cancelTask.classList.add('itemCancel');
-    	cancelTask.innerHTML = "Edit";
-        cancelTask.addEventListener('click', () => this.edit(input));
-        
-        //let doneTask = document.createElement('button');
-    	//doneTask.classList.add('itemCancel');
-    	//doneTask.innerHTML = "Cancel";
-    	//doneTask.addEventListener('click', () => this.edit(input));
-
-    	let deleteTask = document.createElement('button');
-    	deleteTask.classList.add('itemDone');
-    	deleteTask.innerHTML = "Delete";
-    	deleteTask.addEventListener('click', () => this.remove(itemBox));
-
-    	card.appendChild(itemBox);
-
-        itemBox.appendChild(input);
-        itemBox.appendChild(cancelTask);
-        itemBox.appendChild(deleteTask);
-
-    }
-    edit(input){
-           input.disabled = !input.disabled;
-    }
-
-    remove(itemBox){
-        itemBox.parentNode.removeChild(itemBox);
-     }
+function createTaskElement(name,priority){
+    this.name = name;
+    this.priority = priority;
+    this.status = false;
 }
 
+addTask.onclick = () => {
+     
+    //добавляем задачу в массив
+    let task = new createTaskElement(enterTask.value,chousePriority.value);
+    
+    //создаем карточку для задачи
+     let divTask = document.createElement('div');
+     divTask.classList.add('TODOitem');
+     card.appendChild(divTask);
 
-addTask.addEventListener('click',()=>{
-    new task(enterTask.value, chousePriority.value);
+     //текст задачи
+    let poleTask = document.createElement('input');
+    poleTask.classList.add('item');
+    poleTask.type ='text';
+    poleTask.value = 'priority:' + task.priority +'  ' + task.name ;
+    poleTask.name = task.priority;
+    poleTask.disabled = true;
+    //poleTask.addEventListener('click',()=>editTask(poleTask));
+    divTask.appendChild(poleTask);
+
+    //кнопка удаления
+    let deleteButton = document.createElement('button');
+    deleteButton.classList.add('itemDelete');
+    deleteButton.innerHTML='Delete';
+    deleteButton.addEventListener('click',()=>deleteTask(divTask, Tasks));
+    divTask.appendChild(deleteButton);
+
+    let editButton = document.createElement('button');
+    editButton.classList.add('itemCancel');
+    editButton.innerHTML='Edit';
+    editButton.addEventListener('click',()=>editTask(poleTask));
+    divTask.appendChild(editButton);
+
+    //считаем количество задач
+    let getCountofTask = document.querySelector('.count');
+    getCountofTask.value = card.children.length-1;
+    getCountofTask.classList.add('count');
+
     enterTask.value="";
+};
+    
+//удаление элемента
+function deleteTask(divTask)
+{
+    divTask.parentNode.removeChild(divTask);
+
+    //считаем количество задач
+    let getCountofTask = document.querySelector('.count');
+    getCountofTask.value = card.children.length-1;
+    getCountofTask.classList.add('count');
+}
+
+//почему не работает? хммм...
+function editTask(poleTask)
+{
+    poleTask.disabled = !poleTask.disabled;
+}
+
+//тоже не работает...
+let sortHigh = document.querySelector("#High");
+sortHigh.addEventListener('click',()=>{
+    let sortedDivByHigh = Array.from(card.children)
+    .sort((divA)=>divA.priority=='High');
+
+card.append(...sortedDivByHigh);
 });
 
+let sortMedium = document.querySelector("#Medium");
+sortMedium.addEventListener('click',()=>{
+    let sortedDivByMedium = Array.from(card.children)
+    .sort((divA,divB)=>divA.name>divB.name ? 1 :-1);
 
+card.append(...sortedDivByMedium);
+});
+
+let sortLow = document.querySelector("#Low");
+sortLow.addEventListener('click',()=>{
+    let sortedDivByLow = Array.from(card.children)
+    .sort((divA,divB)=>divA.name>divB.name ? 1 :-1);
+
+card.append(...sortedDivByLow);
+})
