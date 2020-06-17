@@ -91,7 +91,7 @@ function doneTask(divTask,poleTask, task)
     }
     else poleTask.className='item-cancel';
 }
-
+//todo разве была задача сортировать? вроде бы только фильтр
 //тоже не работает...
 let sortHigh = document.querySelector("#High");
 sortHigh.addEventListener('click',()=>{
