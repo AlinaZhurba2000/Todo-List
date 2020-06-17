@@ -29,7 +29,7 @@ addTask.onclick = () => {
     let poleTask = document.createElement('input');
     poleTask.classList.add('item');
     poleTask.type ='text';
-    poleTask.value = task.name ;
+    poleTask.value = task.name;
     poleTask.name = task.priority;
     poleTask.disabled = true;
     
@@ -62,6 +62,8 @@ addTask.onclick = () => {
     getCountofTask.classList.add('count');
 
     enterTask.value="";
+
+    Tasks.push(task);
 };
     
 //удаление элемента
@@ -73,6 +75,8 @@ function deleteTask(divTask)
     let getCountofTask = document.querySelector('.count');
     getCountofTask.value = card.children.length-1;
     getCountofTask.classList.add('count');
+
+
 }
 
 //почему не работает? хммм...
